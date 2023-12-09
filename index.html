@@ -4,9 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>新标签页</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        .backimg{
+            background-image: url(cover.jpg);
+            background-position: center;
+            background-size: cover;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            z-index: -100;
+        }
+        .title{
+            position: absolute;
+            font-size: 3em;
+            width: 100%;
+            text-align: center;
+            top: 40%;
+            color: white;
+        }
+    </style>
 </head>
 <body>
-    <h1>把MSN屏蔽后，EDGE新标签页用不了了</h1>
-    <p>所以自己写一个！</p>
+    <div class="backimg"></div>
+    <div class="title">小叶子的导航页</div>
 </body>
 </html>

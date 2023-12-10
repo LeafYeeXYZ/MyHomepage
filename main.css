@@ -154,11 +154,11 @@
 }
 .links{
     position: absolute;
-    width: 70%;
+    width: 60%;
     z-index: -50;
     top: 65%;
-    left: 15%;
-    right: 15%;
+    left: 20%;
+    right: 20%;
 }
 .links img{
     position: static;
@@ -178,7 +178,7 @@
     backdrop-filter: blur(0.5em);
     font-size: 1.2em;
     font-weight: normal;
-    width: 15%;
+    width: 20%;
     padding-top: 0.5em;
     padding-bottom: 0.5em;
     padding-left: 1%;

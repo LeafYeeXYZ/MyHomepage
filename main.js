@@ -34,12 +34,12 @@ let root = document.documentElement;
 let SwitchTheme = document.querySelector('.header.icon.theme');
 SwitchTheme.addEventListener('click', themeswitch);
 function themeswitch() {
-    if (SwitchTheme.src === 'http://127.0.0.1:5500/icon/sun.svg' || SwitchTheme.src === 'http://homepage.leafyee.xyz/icon/sun.svg' || SwitchTheme.src === 'file:///D:/Github/HomePageForLeaf/icon/sun.svg') {
+    if (SwitchTheme.src === 'http://127.0.0.1:5500/icon/sun.svg' || SwitchTheme.src === 'https://homepage.leafyee.xyz/icon/sun.svg' || SwitchTheme.src === 'file:///D:/Github/HomePageForLeaf/icon/sun.svg') {
         SwitchTheme.src = 'icon/moon.svg';
         document.body.style.setProperty('--filter-brightness', '0.7');
         document.body.style.setProperty('--filter-brightness-link', '0.8');
     }
-    else if (SwitchTheme.src === 'http://127.0.0.1:5500/icon/moon.svg' || SwitchTheme.src === 'http://homepage.leafyee.xyz/icon/moon.svg' || SwitchTheme.src === 'file:///D:/Github/HomePageForLeaf/icon/moon.svg') {
+    else if (SwitchTheme.src === 'http://127.0.0.1:5500/icon/moon.svg' || SwitchTheme.src === 'https://homepage.leafyee.xyz/icon/moon.svg' || SwitchTheme.src === 'file:///D:/Github/HomePageForLeaf/icon/moon.svg') {
         SwitchTheme.src = 'icon/sun.svg';
         document.body.style.setProperty('--filter-brightness', '1');
         document.body.style.setProperty('--filter-brightness-link', '1');

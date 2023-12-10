@@ -75,12 +75,11 @@
     border-radius: var(--boarder-radius);
     transform: scale(1);
     filter: brightness(var(--filter-brightness-link));
-    opacity: 0.8;
-    transition: transform 0.2s, filter 0.5s, opacity 0.2s;
+    transition: transform 0.2s, filter 0.5s;
+    backdrop-filter: blur(1em);
 }
 .navbar a:hover{
     transform: scale(1.05);
-    opacity: 1;
 }
 .navbar a:active{
     transform: scale(0.95);
@@ -104,6 +103,7 @@
     filter: brightness(var(--filter-brightness-link));
     transition: filter 0.5s;
     z-index: -50;
+    backdrop-filter: blur(1em);
 }
 .header.title{
     left: 0.8em;

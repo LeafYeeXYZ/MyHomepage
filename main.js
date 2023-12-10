@@ -12,13 +12,11 @@ function ShowNavbar() {
     let navbarTopPx = parseFloat(window.getComputedStyle(navbar).getPropertyValue('top'));
     let navbarTopEm = pxToEm(navbarTopPx);
     if (navbarTopEm === '0.4em') {
-        navbar.style.top = '-12em';
-        navbar.style.opacity = '0';
+        navbar.style.top = '-100vh';
         menuIcon.src = 'icon/menu.svg';
     }
     else if(navbarTopEm === '-12em'){
         navbar.style.top = '0.4em';
-        navbar.style.opacity = '1';
         menuIcon.src = 'icon/menudown.svg';
     }
     else{

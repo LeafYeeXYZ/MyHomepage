@@ -6,6 +6,7 @@
     --color-background-end: rgba(255, 255, 255, 0.9);
     --color-text: #000;
     --color-back: #fff;
+    --boarder-radius: 1.5em;
 }
 .backimg{
     background-image: url(cover.jpg);
@@ -26,6 +27,62 @@
     background-color: var(--color-back);
     z-index: 100;
 }
+.navbarcontainer{
+    position: absolute;
+    font-size: 1.2em;
+    font-weight: normal;
+    width: 20em;
+    height: 12em;
+    margin-top: 3.3em;
+    padding-top: 0.3em;
+    padding-right: 0.8em;
+    right: 0;
+    z-index: -60;
+}
+.navbar{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 10em;
+    right: 0.8em;
+    top: -12em;
+    opacity: 1;
+    transition: top 0.3s ease, opacity 0.3s ease-out;
+    overflow: visible;
+    z-index: -50;
+}
+.navbar a{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    float: left;
+    text-decoration: none;
+    color: var(--color-text);
+    background: linear-gradient(to left top, var(--color-background-start), var(--color-background-end));
+    backdrop-filter: blur(0.5em);
+    width: 100%;
+    padding-top: 0.4em;
+    padding-bottom: 0.4em;
+    margin-bottom: 0.4em;
+    border-radius: var(--boarder-radius);
+    transform: scale(1);
+    transition: transform 0.2s;
+}
+.navbar a:hover{
+    transform: scale(1.05);
+}
+.navbar a:active{
+    transform: scale(0.95);
+}
+.navbar img{
+    position: static;
+    width: 1em;
+    height: 1em;
+    margin-right: 0.3em;
+}
 .header{
     position: absolute;
     background: linear-gradient(to left top, var(--color-background-start), var(--color-background-end));
@@ -35,6 +92,7 @@
     top: 0.8em;
     font-size: 1.2em;
     font-weight: bold;
+    border-radius: var(--boarder-radius);
     z-index: -50;
 }
 .header.title{
@@ -43,14 +101,12 @@
     padding-right: 1em;
     padding-top: 0.5em;
     padding-bottom: 0.5em;
-    border-radius: 1em;
 }
 .header.icon{
     padding-left: 1em;
     padding-right: 1em;
     padding-top: 0.5em;
     padding-bottom: 0.5em;
-    border-radius: 1em;
     width: 1.2em;
     height: 1.2em;
 }
@@ -74,6 +130,7 @@
     right: 0.8em;
     transform: scale(1);
     transition: 0.2s;
+    position: fixed;
 }
 .header.icon.menu:hover{
     transform: scale(1.05);
@@ -113,7 +170,7 @@
     margin-bottom: 1%;
     margin-left: 1.5%;
     margin-right: 1.5%;
-    border-radius: 1em;
+    border-radius: var(--boarder-radius);
     transform: scale(1);
     transition: transform 0.2s, color 0.05s;
 }
@@ -122,6 +179,9 @@
 }
 .links a:hover{
     transform: scale(1.05);
+}
+.links a:active{
+    transform: scale(0.95);
 }
 @media only screen and (max-width: 1200px){
     .links span{

@@ -2,11 +2,15 @@
     margin: 0;
     padding: 0;
     overflow: hidden;
+}
+:root{
     --color-background-start: rgba(255, 255, 255, 0.7);
     --color-background-end: rgba(255, 255, 255, 0.9);
     --color-text: #000;
     --color-back: #fff;
     --boarder-radius: 1.5em;
+    --filter-brightness: 1;
+    --filter-brightness-link: 1;
 }
 .backimg{
     background-image: url(cover.jpg);
@@ -16,6 +20,8 @@
     height: 100%;
     position: fixed;
     z-index: -100;
+    filter: brightness(var(--filter-brightness));
+    transition: filter 0.5s ease;
 }
 .backmobile{
     position: absolute;
@@ -69,7 +75,8 @@
     margin-bottom: 0.4em;
     border-radius: var(--boarder-radius);
     transform: scale(1);
-    transition: transform 0.2s;
+    filter: brightness(var(--filter-brightness-link));
+    transition: transform 0.2s, filter 0.5s;
 }
 .navbar a:hover{
     transform: scale(1.05);
@@ -93,6 +100,8 @@
     font-size: 1.2em;
     font-weight: bold;
     border-radius: var(--boarder-radius);
+    filter: brightness(var(--filter-brightness-link));
+    transition: filter 0.5s;
     z-index: -50;
 }
 .header.title{
@@ -111,7 +120,7 @@
     height: 1.2em;
 }
 .header.icon.theme{
-    left: 11.5em;
+    left: 10.5em;
     transform: scale(1);
     transition: 0.2s;
 }
@@ -119,7 +128,7 @@
     transform: scale(1.05);
 }
 .header.icon.swap{
-    left: 15.3em;
+    left: 14.3em;
     transform: scale(1);
     transition: 0.2s;
 }
@@ -133,6 +142,14 @@
     position: fixed;
 }
 .header.icon.menu:hover{
+    transform: scale(1.05);
+}
+.header.icon.compass{
+    right: 4.6em;
+    transform: scale(1);
+    transition: 0.2s;
+}
+.header.icon.compass:hover{
     transform: scale(1.05);
 }
 .links{
@@ -172,7 +189,8 @@
     margin-right: 1.5%;
     border-radius: var(--boarder-radius);
     transform: scale(1);
-    transition: transform 0.2s, color 0.05s;
+    transition: transform 0.2s, color 0.05s, filter 0.5s;
+    filter: brightness(var(--filter-brightness-link));
 }
 .links span{
     display: inline;

@@ -65,8 +65,8 @@ switcher.addEventListener('click', switchBackground);
 function switchBackground() {
     console.log('run switchBackground');
     if (switcher_status === 1) {
-        document.querySelector('.backimg video').style.display = 'none';
         document.querySelector('.backimg img').style.display = 'unset';
+        document.querySelector('.backimg video').style.display = 'none';
         switcher_status = 0;
         console.log('run done');
     }

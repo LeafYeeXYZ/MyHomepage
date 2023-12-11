@@ -14,10 +14,9 @@
     --filter-blur: 10px;
 }
 .backimg{
-    /* background-image: url(cover.jpg); */
-    /* 需要的时候再加回来，省得加载耗时间 */
+    /* background-image: url(cover.jpg);
     background-position: center;
-    background-size: cover;
+    background-size: cover; */
     width: 100%;
     height: 100%;
     position: fixed;
@@ -25,8 +24,18 @@
     filter: brightness(var(--filter-brightness));
     transition: filter 0.5s ease;
 }
+.backimg img{
+    object-fit: cover;
+    object-position: center;
+    z-index: -95;
+    display: none;
+    width: 100%;
+    height: 100%;
+}
 .backimg video{
     object-fit: cover;
+    z-index: -90;
+    display: unset;
 }
 .backmobile{
     position: absolute;

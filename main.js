@@ -59,6 +59,26 @@ function openCompass() {
 }
 
 // 切换背景图片
-
+let switcher = document.querySelector('.header.icon.swap');
+let switcher_status = 1;
+switcher.addEventListener('click', switchBackground);
+function switchBackground() {
+    console.log('run switchBackground');
+    if (switcher_status === 1) {
+        document.querySelector('.backimg video').style.display = 'none';
+        document.querySelector('.backimg img').style.display = 'unset';
+        switcher_status = 0;
+        console.log('run done');
+    }
+    else if (switcher_status === 0) {
+        document.querySelector('.backimg video').style.display = 'unset';
+        document.querySelector('.backimg img').style.display = 'none';
+        switcher_status = 1;
+        console.log('run done');
+    }
+    else {
+        console.log('run error');
+    }
+}
 
 

@@ -55,7 +55,7 @@ if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').match
 let compass = document.querySelector('.header.icon.compass');
 compass.addEventListener('click', openCompass);
 function openCompass() {
-    window.open('https://blog.leafyee.xyz/about/#常用网站导航', '_self');
+    window.open('https://blog.leafyee.xyz/about/#常用网站导航', '_blank');
 }
 
 // 切换背景图片

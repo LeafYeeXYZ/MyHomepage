@@ -171,7 +171,7 @@
     left: 50%;
     transform: translate(-50%, 0) scale(1);
     top: 60%;
-    width: 30em;
+    width: 35em;
     height: 4em;
     padding-top: 1em;
     padding-bottom: 1em;
@@ -185,9 +185,25 @@
     outline: none;
     border: none;
     filter: brightness(var(--filter-brightness-link));
+    display: unset;
 }
 .search:focus{
     transform: translate(-50%, 0) scale(1.05);
+}
+@media only screen and (max-width: 1200px){
+    .search{
+        width: 30em;
+    }
+}
+@media only screen and (max-width: 1000px){
+    .search{
+        width: 25em;
+    }
+}
+@media only screen and (max-width: 800px){
+    .search{
+        display: none;
+    }
 }
 @media only screen and (max-width: 500px){
     .backmobile{

@@ -16,10 +16,13 @@ self.addEventListener('fetch', function(event) {
                         }
                         // 如果获取成功，将资源添加到缓存中
                         var responseToCache = response.clone();
-                        caches.open('HomePageCache')
-                            .then(function(cache) {
-                                cache.put(event.request, responseToCache);
-                            });
+                        // 检查请求的 scheme
+                        if (event.request.url.startsWith('http') || event.request.url.startsWith('https')) {
+                            caches.open('HomePageCache')
+                                .then(function(cache) {
+                                    cache.put(event.request, responseToCache);
+                                });
+                        }
                         return response;
                     }
                 );

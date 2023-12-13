@@ -60,7 +60,7 @@ function openCompass() {
 
 // 切换背景图片
 let switcher = document.querySelector('.header.icon.swap');
-let switcher_status = 1;
+let switcher_status = 0;
 switcher.addEventListener('click', switchBackground);
 function switchBackground() {
     console.log('run switchBackground');

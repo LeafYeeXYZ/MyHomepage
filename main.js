@@ -30,21 +30,24 @@ menuIcon.addEventListener('click', ShowNavbar);
 // 切换主题:也不要动下面的代码
 let root = document.documentElement;
 let SwitchTheme = document.querySelector('.header.icon.theme');
+let theme = 1;
 SwitchTheme.addEventListener('click', themeswitch);
 function themeswitch() {
-    if (SwitchTheme.src === 'http://127.0.0.1:5500/icon/sun.svg' || SwitchTheme.src === 'https://homepage.leafyee.xyz/icon/sun.svg' || SwitchTheme.src === 'file:///D:/Github/HomePageForLeaf/icon/sun.svg') {
+    if (theme === 1) {
         SwitchTheme.src = 'icon/moon.svg';
         document.body.style.setProperty('--filter-brightness', '0.7');
         document.body.style.setProperty('--filter-brightness-link', '0.8');
+        theme = 0;
     }
-    else if (SwitchTheme.src === 'http://127.0.0.1:5500/icon/moon.svg' || SwitchTheme.src === 'https://homepage.leafyee.xyz/icon/moon.svg' || SwitchTheme.src === 'file:///D:/Github/HomePageForLeaf/icon/moon.svg') {
+    else if (theme === 0) {
         SwitchTheme.src = 'icon/sun.svg';
         document.body.style.setProperty('--filter-brightness', '1');
         document.body.style.setProperty('--filter-brightness-link', '1');
+        theme = 1;
     }
     else {
         console.log('error');
-        console.log('value is' + SwitchTheme.src);
+        console.log('value is' + theme);
     }
 }
 if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {

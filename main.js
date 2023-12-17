@@ -91,9 +91,8 @@ document.addEventListener('selectstart', function(e) {
 });
 
 // 搜索后清楚搜索框
-document.querySelector('.search').addEventListener('keydown', function(event) {
-    if (event.keyCode === 13) {
-        event.preventDefault();
-        this.value = '';
-    }
+document.querySelector('form').addEventListener('submit', function(event) {
+    setTimeout(() => {
+        document.querySelector('.search').value = '';
+    }, 0);
 });

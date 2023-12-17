@@ -89,3 +89,11 @@ function switchBackground() {
 document.addEventListener('selectstart', function(e) {
     e.preventDefault();
 });
+
+// 搜索后清楚搜索框
+document.querySelector('.search').addEventListener('keydown', function(event) {
+    if (event.keyCode === 13) {
+        event.preventDefault();
+        this.value = '';
+    }
+});

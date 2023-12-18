@@ -27,7 +27,7 @@ function ShowNavbar() {
 let menuIcon = document.querySelector('.header.icon.menu');
 menuIcon.addEventListener('click', ShowNavbar);
 
-// 切换主题:也不要动下面的代码
+// 切换主题
 let root = document.documentElement;
 let SwitchTheme = document.querySelector('.header.icon.theme');
 let theme = 1;

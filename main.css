@@ -172,7 +172,7 @@
     transform: translate(-50%, 0) scale(1);
     top: 60%;
     width: 35em;
-    height: 4em;
+    height: 3.6em;
     padding-top: 1em;
     padding-bottom: 1em;
     padding-left: 2em;
@@ -188,7 +188,7 @@
     display: unset;
 }
 .search:focus{
-    transform: translate(-50%, 0) scale(1.05);
+    transform: translate(-50%, 0) scale(1.03);
 }
 @media only screen and (max-width: 1200px){
     .search{

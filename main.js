@@ -26,7 +26,7 @@ function ShowNavbar() {
 }
 let menuIcon = document.querySelector('.header.icon.menu');
 menuIcon.addEventListener('click', ShowNavbar);
-setTimeout(() => menuIcon.click(), 500);
+setTimeout(() => menuIcon.click(), 100);
 
 // 切换主题
 let root = document.documentElement;

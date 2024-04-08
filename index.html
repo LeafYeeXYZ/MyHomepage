@@ -1,82 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
     <title>新标签页</title>
-    <link rel="stylesheet" href="main.css">
-    <link rel="preload" href="icon/moon.svg" as="image">
-    <link rel="preload" href="icon/sun.svg" as="image">
-    <link rel="icon" href="favicon.ico">
-</head>
-<body>
-    <div class="backimg">
-        <img src="cover.jpg">
-        <video autoplay="true" loop="true" height="100%" width="100%" muted="true" disablepictureinpicture="true">
-            <source src="cover_short.mp4" type="video/mp4">
-        </video>
-    </div>
-    <div class="backmobile"><b>不支持移动设备哦</b></div>
-    <div class="header title">浏览器新标签页</div>
-    <img src="icon/sun.svg" class="header icon theme">
-    <img src="icon/swap.svg" class="header icon swap">
-    <img src="icon/menu.svg" class="header icon menu">
-    <img src="icon/compass.svg" class="header icon compass">
-    <div class="navbarcontainer">
-        <div class="navbar">
-            <a href="https://one.bnu.edu.cn/" target="_blank">
-                <img src="icon/school.svg">
-                <span>北京师范大学</span>
-            </a>
-            <a href="https://www.leafyee.xyz/" target="_blank">
-                <img src="icon/me.svg">
-                <span>小叶子的小站</span>
-            </a>
-            <a href="https://blog.leafyee.xyz/" target="_blank">
-                <img src="icon/blog.svg">
-                <span>小叶子的博客</span>
-            </a>
-            <a href="https://file.leafyee.xyz/" target="_blank">
-                <img src="icon/pan.svg">
-                <span>小叶子的网盘</span>
-            </a>
-            <a href="https://paint.leafyee.xyz/" target="_blank">
-                <img src="icon/painter.svg">
-                <span>图片生成</span>
-            </a>
-            <a href="https://comment.leafyee.xyz/ui" target="_blank">
-                <img src="icon/comment.svg">
-                <span>评论系统</span>
-            </a>
-            <a href="https://drive.google.com/drive/u/0/my-drive" target="_blank">
-                <img src="icon/pan.svg">
-                <span>GoogleDrive</span>
-            </a>
-            <a href="https://github.com/" target="_blank">
-                <img src="icon/github.svg">
-                <span>GitHub</span>
-            </a>
-            <a href="https://dash.cloudflare.com/" target="_blank">
-                <img src="icon/cloudflare.svg">
-                <span>Cloudflare</span>
-            </a>
-            <a href="https://www.bing.com/search?q=Bing+AI&showconv=1&FORM=hpcodx" target="_blank">
-                <img src="icon/bing.svg">
-                <span>NewBing</span>
-            </a>
-            <a href="https://gemini.google.com/" target="_blank">
-                <img src="icon/ai.svg">
-                <span>Gemini</span>
-            </a>            
-            <a href="https://www.notion.so/" target="_blank">
-                <img src="icon/notion.svg">
-                <span>Notion</span>
-            </a>
-        </div>
-    </div>
-    <form action="https://www.bing.com/search" method="get" target="_blank">
-        <input type="search" class="search" name="q" autofocus>
-    </form>
-    <script src="main.js"></script>
-</body>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>

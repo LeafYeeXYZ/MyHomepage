@@ -1,0 +1,73 @@
+.container {
+  background-image: url('/cover.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  position: absolute;
+  --text: #300000;
+  --back: linear-gradient(to left top, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.9));
+
+  & .essay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: var(--text);
+    background: var(--back);
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    margin: 0.8rem 0.8rem;
+    border-radius: 4rem;
+  }
+
+  & .links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    height: 40vh;
+    width: 100%;
+    margin-top: 40vh;
+    margin-bottom: 20vh;
+    padding: 0 15vw;
+
+    & .link {
+      border-radius: 3rem;
+      font-size: 1rem;
+      padding: 0.5rem 1rem;
+      margin: 0.3rem 0.3rem;
+      backdrop-filter: blur(10px);
+      color: var(--text);
+      background: var(--back);
+      box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.15);
+      transition: all 0.3s ease;
+      &:hover {
+        transform: scale(1.03);
+      }
+      &:active {
+        transform: scale(0.97);
+      }
+    }
+  }
+
+  & .compass {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: var(--text);
+    background: var(--back);
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    margin: 0.8rem 0.8rem;
+    border-radius: 4rem;
+    transition: all 0.3s ease;
+    &:hover {
+      transform: scale(1.03);
+    }
+    &:active {
+      transform: scale(0.97);
+    }
+  }
+}

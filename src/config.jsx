@@ -17,7 +17,7 @@ export const links = [
   { url: 'https://paint.leafyee.xyz/', name: '赛博画师小叶子', icon: <PictureFilled /> },
   { url: 'https://comment.leafyee.xyz/ui', name: 'Waline', icon: <CalendarFilled /> },
   { url: 'https://github.com', name: 'GitHub', icon: <GithubFilled /> },
-  { url: 'dash.cloudflare.com', name: 'Cloudflare', icon: <CloudFilled /> },
+  { url: 'https://dash.cloudflare.com', name: 'Cloudflare', icon: <CloudFilled /> },
   { url: 'https://www.bing.com/search?q=Bing+AI&showconv=1&FORM=hpcodx', name: 'NewBing', icon: <StarFilled /> },
   { url: 'https://aistudio.google.com/', name: 'GoogleAI', icon: <SunFilled /> },
 ]

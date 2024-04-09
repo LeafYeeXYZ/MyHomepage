@@ -1,5 +1,12 @@
 html {
   overflow: hidden;
+  font-size: 18px;
+}
+a:hover {
+  transform: scale(1.03);
+}
+a:active {
+  transform: scale(0.97);
 }
 
 .container {
@@ -11,19 +18,8 @@ html {
   overflow: hidden;
   position: absolute;
   --text: #300000;
-  --back: linear-gradient(to left top, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.9));
-
-  & .essay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    color: var(--text);
-    background: var(--back);
-    font-size: 1rem;
-    padding: 0.5rem 1rem;
-    margin: 0.8rem 0.8rem;
-    border-radius: 4rem;
-  }
+  --back-essay: linear-gradient(to left top, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.4));
+  --back-link: linear-gradient(to left top, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.3));
 
   & .links {
     display: flex;
@@ -33,8 +29,8 @@ html {
     flex-wrap: wrap;
     height: 40vh;
     width: 100%;
-    margin-top: 40vh;
-    margin-bottom: 20vh;
+    margin-top: 45vh;
+    margin-bottom: 15vh;
     padding: 0 min(15rem, 15vw);
 
     & .link {
@@ -44,34 +40,31 @@ html {
       margin: 0.3rem 0.3rem;
       backdrop-filter: blur(10px);
       color: var(--text);
-      background: var(--back);
+      background: var(--back-link);
       box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.15);
       transition: all 0.3s ease;
-      &:hover {
-        transform: scale(1.03);
-      }
-      &:active {
-        transform: scale(0.97);
-      }
     }
+    & .essay { background: var(--back-essay); }
   }
 
-  & .compass {
+  & .nav {
     position: absolute;
     top: 0;
-    right: 0;
-    color: var(--text);
-    background: var(--back);
+    border-radius: 3rem;
     font-size: 1rem;
+    font-weight: bold;
     padding: 0.5rem 1rem;
-    margin: 0.8rem 0.8rem;
-    border-radius: 4rem;
-    transition: all 0.3s ease;
-    &:hover {
-      transform: scale(1.03);
-    }
-    &:active {
-      transform: scale(0.97);
-    }
+    margin: 0.65rem 0.6rem;
+    backdrop-filter: blur(10px);
+    color: var(--text);
+    background: var(--back-link);
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease; 
+  }
+  & .weather {
+    left: 0;
+  }
+  & .compass {
+    right: 0;
   }
 }

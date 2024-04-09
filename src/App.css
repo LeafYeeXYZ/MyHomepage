@@ -45,7 +45,11 @@ a:active {
       box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.15);
       transition: all 0.3s ease;
     }
-    & .essay { background: var(--back-essay); }
+    & .essay { 
+      background: var(--back-essay);
+      &:hover { transform: scale(1); }
+      &:active { transform: scale(1); }
+    }
   }
 
   & .nav {

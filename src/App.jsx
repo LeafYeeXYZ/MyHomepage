@@ -27,7 +27,7 @@ function App() {
     if (weatherExpire && weather && Date.now() < weatherExpire) {
       setWeather(weather)
     } else {
-      fetch(`https://devapi.qweather.com/v7/weather/3d?location=101010100&key=${import.meta.env.VITE_WEATHER_API_KEY}`)
+      fetch(`https://api.leafyee.xyz/weather`)
       .then(res => {
         return res.json()
       })

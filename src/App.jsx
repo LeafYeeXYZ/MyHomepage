@@ -22,7 +22,7 @@ function App() {
       setEssay(data.hitokoto)
     })
     // 天气
-    fetch(`https://devapi.qweather.com/v7/weather/3d?location=101010100&key=${import.meta.env.WEATHER}`)
+    fetch(`https://devapi.qweather.com/v7/weather/3d?location=101010100&key=${import.meta.env.VITE_WEATHER_API_KEY}`)
     .then(res => {
       return res.json()
     })

@@ -20,7 +20,7 @@ function Cover() {
     const previewStatic = document.querySelector('.cover-preview-static')
     if (previewDynamic.src) {
       URL.revokeObjectURL(previewDynamic.src)
-      previewDynamic.src = ''
+      previewDynamic.src = undefined
     }
     previewDynamic.style.opacity = 0
     previewStatic.style.opacity = 1
@@ -65,14 +65,13 @@ function Cover() {
   function previewCover() {
     const previewStatic = document.querySelector('.cover-preview-static')
     const previewDynamic = document.querySelector('.cover-preview-dynamic')
-    // 如果是第一次选择文件
-    if (!previewDynamic.src) {
-      previewDynamic.style.opacity = 1
-      previewStatic.style.opacity = 0
-    // 否则清空预览图片
-    } else {
+    // 如果不是第一次选择文件, 则释放 URL
+    if (previewDynamic.src) {
       URL.revokeObjectURL(previewDynamic.src)
     }
+    // 显示预览图片
+    previewDynamic.style.opacity = 1
+    previewStatic.style.opacity = 0
     // 创建 URL
     const file = document.querySelector('#cover-file').files[0]
     const url = URL.createObjectURL(file)

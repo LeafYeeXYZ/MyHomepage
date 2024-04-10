@@ -1,0 +1,30 @@
+.links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+  height: 40vh;
+  width: 100%;
+  margin-top: 45vh;
+  margin-bottom: 15vh;
+  padding: var(--links-padding);
+
+  & .link {
+    border-radius: 3rem;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    margin: 0.3rem 0.3rem;
+    backdrop-filter: blur(10px);
+    color: var(--text);
+    background: var(--back-link);
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+  }
+  
+  & .essay { 
+    background: var(--back-essay);
+    &:hover { transform: scale(1); }
+    &:active { transform: scale(1); }
+  }
+}

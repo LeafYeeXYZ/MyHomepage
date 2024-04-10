@@ -1,4 +1,4 @@
-import '../App.css'
+import '../styles/App.css'
 import Weather from './Weather.jsx'
 import Links from './Links.jsx'
 import Compass from './Compass.jsx'

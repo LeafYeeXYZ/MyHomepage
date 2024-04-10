@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import '../styles/Weather.css'
 
 export default function Weather() {
   // 天气
@@ -30,5 +31,5 @@ export default function Weather() {
     }
   }, [])
   // 返回 JSX 元素
-  return <section className='nav weather'>{weather}</section>
+  return <section className='weather'>{weather}</section>
 }

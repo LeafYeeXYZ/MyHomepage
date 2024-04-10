@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { SlidersFilled } from '@ant-design/icons'
-import './Cover.css'
+import '../styles/Cover.css'
 import localforage from 'localforage'
 
 function Cover() {
@@ -109,7 +109,7 @@ function Cover() {
       </section>
       {/* 用来装封面的 */}
       <section 
-        className='cover-container'
+        className='cover-back'
         style={{ backgroundImage: `url(${cover})` }}
       ></section>
       {/* 对话框 */}
@@ -121,7 +121,7 @@ function Cover() {
             <img src={cover} className='cover-preview-static' style={{ opacity: 1 }} />
             <img className='cover-preview-dynamic' style={{ opacity: 0 }} />
           </div>
-          <div className='cover-buttons'>
+          <div className='cover-dialog-buttons'>
             <input type='button' onClick={resetCover} name='cover-reset' value='重置' />
             <input type='button' onClick={saveCover} name='cover-set' value='保存' />
             <input type='button' onClick={closeDialog} name='cover-close' value='关闭' />

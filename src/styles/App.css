@@ -1,0 +1,30 @@
+html {
+  overflow: hidden;
+  font-size: 18px;
+}
+a:hover {
+  transform: scale(1.03);
+}
+a:active {
+  transform: scale(0.97);
+}
+
+.container {
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  position: absolute;
+  --links-padding: 0 min(15rem, 15vw);
+  --text: #300000;
+  --back-essay: linear-gradient(to left top, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.4));
+  --back-link: linear-gradient(to left top, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.3));
+}
+
+@media screen and (max-width: 500px) {
+  html {
+    font-size: 12px;
+  }
+  .container {
+    --links-padding: 0 min(8rem, 8vw);
+  }
+}

@@ -1,5 +1,6 @@
 import { links } from '../config.jsx'
 import { useState, useEffect } from 'react'
+import '../styles/Links.css'
 
 export default function Links() {
   // 一言

@@ -1,0 +1,16 @@
+.compass {
+  position: absolute;
+  border-radius: 3rem;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  margin: 0.65rem 0.6rem;
+  backdrop-filter: blur(10px);
+  color: var(--text);
+  background: var(--back-link);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+
+  top: 0;
+  right: 0;
+}

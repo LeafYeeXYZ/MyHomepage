@@ -13,4 +13,18 @@
 
   top: 0;
   right: 0;
+
+  &::before {
+    content: '导航';
+    display: inline-block;
+    width: 0;
+    height: 1rem;
+    font-weight: normal;
+    font-size: 0.8rem;
+    overflow: hidden;
+    transition: all 0.2s ease;
+  }
+  &:hover::before {
+    width: 2rem;
+  }
 }

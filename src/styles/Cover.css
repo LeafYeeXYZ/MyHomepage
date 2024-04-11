@@ -16,6 +16,20 @@
   right: 0;
   &:hover { transform: scale(1.03); }
   &:active { transform: scale(0.97); }
+
+  &::before {
+    content: '封面';
+    display: inline-block;
+    width: 0;
+    height: 1rem;
+    font-weight: normal;
+    font-size: 0.8rem;
+    overflow: hidden;
+    transition: all 0.2s ease;
+  }
+  &:hover::before {
+    width: 2rem;
+  }
 }
 /* 封面本面 */
 .cover-back {

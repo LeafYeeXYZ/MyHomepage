@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import { SlidersFilled } from '@ant-design/icons'
 import '../styles/Cover.css'
 import localforage from 'localforage'
@@ -6,41 +6,43 @@ import localforage from 'localforage'
 function Cover() {
   // 定义封面状态
   const [cover, setCover] = useState('')
+  // 定义封面预览图
+  const prevStat = useRef(null)
+  const prevDyna = useRef(null)
+  // 定义对话框
+  const dialog = useRef(null)
+  // 定义文件选择
+  const file = useRef(null)
+
   // 点击打开对话框
-  function openDialog() {
-    const dialog = document.querySelector('.cover-dialog')
-    dialog.show()
-  }
+  function openDialog() { dialog.current.show() }
   // 点击关闭对话框
   function closeDialog() {
     // 清空文件
-    document.querySelector('#cover-file').value = ''
+    file.current.value = ''
     // 清空预览的 URL
-    const previewDynamic = document.querySelector('.cover-preview-dynamic')
-    const previewStatic = document.querySelector('.cover-preview-static')
-    if (previewDynamic.src) {
-      URL.revokeObjectURL(previewDynamic.src)
-      previewDynamic.src = undefined
+    if (prevDyna.current.src) {
+      URL.revokeObjectURL(prevDyna.current.src)
+      prevDyna.current.src = undefined
     }
-    previewDynamic.style.opacity = 0
-    previewStatic.style.opacity = 1
+    prevDyna.current.style.opacity = 0
+    prevStat.current.style.opacity = 1
     // 关闭对话框
-    const dialog = document.querySelector('.cover-dialog')
-    dialog.close()
+    dialog.current.close()
   }
   // 点击保存封面
   async function saveCover() {
     // 获取文件
-    const file = document.querySelector('#cover-file').files[0]
+    const image = file.current.files[0]
     // 如果没有文件
-    if (!file) {
+    if (!image) {
       alert('请选择文件')
       return
     }
     // 将文件存入 IndexedDB
-    await localforage.setItem('cover', file)
+    await localforage.setItem('cover', image)
     // 创建 URL
-    const url = URL.createObjectURL(file)
+    const url = URL.createObjectURL(image)
     // 设置封面
     setCover(url)
     // 关闭对话框
@@ -63,20 +65,18 @@ function Cover() {
   }
   // 选择文件后预览
   function previewCover() {
-    const previewStatic = document.querySelector('.cover-preview-static')
-    const previewDynamic = document.querySelector('.cover-preview-dynamic')
     // 如果不是第一次选择文件, 则释放 URL
-    if (previewDynamic.src) {
-      URL.revokeObjectURL(previewDynamic.src)
+    if (prevDyna.current.src) {
+      URL.revokeObjectURL(prevDyna.current.src)
     }
     // 显示预览图片
-    previewDynamic.style.opacity = 1
-    previewStatic.style.opacity = 0
+    prevDyna.current.style.opacity = 1
+    prevStat.current.style.opacity = 0
     // 创建 URL
-    const file = document.querySelector('#cover-file').files[0]
-    const url = URL.createObjectURL(file)
+    const image = file.current.files[0]
+    const url = URL.createObjectURL(image)
     // 设置预览图片
-    previewDynamic.src = url
+    prevDyna.current.src = url
   }
 
   // 渲染后执行异步操作
@@ -113,13 +113,13 @@ function Cover() {
         style={{ backgroundImage: `url(${cover})` }}
       ></section>
       {/* 对话框 */}
-      <dialog className='cover-dialog'>
+      <dialog className='cover-dialog' ref={dialog}>
         <div className='cover-dialog-container'>
           <div className='cover-select-file'>
             <p className='cover-title'>自定义封面</p>
-            <input type='file' accept='image/*' id='cover-file' onChange={previewCover} />
-            <img src={cover} className='cover-preview-static' style={{ opacity: 1 }} />
-            <img className='cover-preview-dynamic' style={{ opacity: 0 }} />
+            <input type='file' accept='image/*' id='cover-file' onChange={previewCover} ref={file} />
+            <img src={cover} className='cover-preview-static' style={{ opacity: 1 }} ref={prevStat} />
+            <img className='cover-preview-dynamic' style={{ opacity: 0 }} ref={prevDyna} />
           </div>
           <div className='cover-dialog-buttons'>
             <input type='button' onClick={resetCover} name='cover-reset' value='重置' />

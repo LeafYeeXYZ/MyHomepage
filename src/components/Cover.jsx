@@ -104,28 +104,26 @@ function Cover() {
   return (
     <>
       {/* 打开对话框的按钮 */}
-      <section className='cover-btn nav' onClick={openDialog}>
-        <SlidersFilled />
-      </section>
+      <section className='cover-btn' onClick={openDialog}><SlidersFilled /></section>
       {/* 用来装封面的 */}
-      <section 
-        className='cover-back'
-        style={{ backgroundImage: `url(${cover})` }}
-      ></section>
+      <section className='cover-back' style={{ backgroundImage: `url(${cover})` }}></section>
       {/* 对话框 */}
       <dialog className='cover-dialog' ref={dialog}>
         <div className='cover-dialog-container'>
+
           <div className='cover-select-file'>
             <p className='cover-title'>自定义封面</p>
             <input type='file' accept='image/*' id='cover-file' onChange={previewCover} ref={file} />
             <img src={cover} className='cover-preview-static' style={{ opacity: 1 }} ref={prevStat} />
             <img className='cover-preview-dynamic' style={{ opacity: 0 }} ref={prevDyna} />
           </div>
+
           <div className='cover-dialog-buttons'>
             <input type='button' onClick={resetCover} name='cover-reset' value='重置' />
             <input type='button' onClick={saveCover} name='cover-set' value='保存' />
             <input type='button' onClick={closeDialog} name='cover-close' value='关闭' />
           </div>
+          
         </div>
       </dialog>
     </>

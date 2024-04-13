@@ -79,7 +79,7 @@ function Cover() {
     prevDyna.current.src = url
   }
 
-  // 渲染后执行异步操作
+  // 在页面加载时获取封面
   useEffect(() => {
     // 从 IndexedDB 中获取封面
     localforage.getItem('cover').then(file => {

@@ -4,7 +4,7 @@ import '../styles/Weather.css'
 export default function Weather() {
   // 天气
   const [weather, setWeather] = useState('Loading...')
-  // 渲染后执行异步操作
+  // 在页面加载时获取天气
   useEffect(() => {
     const weatherExpire = localStorage.getItem('weatherExpire')
     const weather = localStorage.getItem('weather')

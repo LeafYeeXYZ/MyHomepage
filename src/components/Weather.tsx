@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react'
 import '../styles/Weather.css'
 
-export default function Weather() {
+export function Weather() {
   // 天气
   const [weather, setWeather] = useState('Loading...')
   // 在页面加载时获取天气
   useEffect(() => {
-    const weatherExpire = localStorage.getItem('weatherExpire')
+    const weatherExpire: number = Number(localStorage.getItem('weatherExpire') || 0)
     const weather = localStorage.getItem('weather')
     if (weatherExpire && weather && Date.now() < weatherExpire) {
       setWeather(weather)
@@ -26,7 +26,7 @@ export default function Weather() {
         // 存入 localStorage
         localStorage.setItem('weather', text)
         const weatherExpire = Date.now() + 60 * 60 * 1000
-        localStorage.setItem('weatherExpire', weatherExpire)
+        localStorage.setItem('weatherExpire', weatherExpire.toString())
       })
     }
   }, [])

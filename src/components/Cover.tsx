@@ -3,37 +3,37 @@ import { SlidersFilled } from '@ant-design/icons'
 import '../styles/Cover.css'
 import localforage from 'localforage'
 
-function Cover() {
+export function Cover() {
   // 定义封面状态
   const [cover, setCover] = useState('')
   // 定义封面预览图
-  const prevStat = useRef(null)
-  const prevDyna = useRef(null)
+  const prevStat = useRef<HTMLImageElement>(null)
+  const prevDyna = useRef<HTMLImageElement>(null)
   // 定义对话框
-  const dialog = useRef(null)
+  const dialog = useRef<HTMLDialogElement>(null)
   // 定义文件选择
-  const file = useRef(null)
+  const file = useRef<HTMLInputElement>(null)
 
   // 点击打开对话框
-  function openDialog() { dialog.current.show() }
+  function openDialog() { dialog.current!.show() }
   // 点击关闭对话框
   function closeDialog() {
     // 清空文件
-    file.current.value = ''
+    file.current!.value = ''
     // 清空预览的 URL
-    if (prevDyna.current.src) {
-      URL.revokeObjectURL(prevDyna.current.src)
-      prevDyna.current.src = undefined
+    if (prevDyna.current!.src) {
+      URL.revokeObjectURL(prevDyna.current!.src)
+      prevDyna.current!.src = ''
     }
-    prevDyna.current.style.opacity = 0
-    prevStat.current.style.opacity = 1
+    prevDyna.current!.style.opacity = '0'
+    prevStat.current!.style.opacity = '1'
     // 关闭对话框
-    dialog.current.close()
+    dialog.current!.close()
   }
   // 点击保存封面
   async function saveCover() {
     // 获取文件
-    const image = file.current.files[0]
+    const image = file.current!.files && file.current!.files[0]
     // 如果没有文件
     if (!image) {
       alert('请选择文件')
@@ -66,17 +66,17 @@ function Cover() {
   // 选择文件后预览
   function previewCover() {
     // 如果不是第一次选择文件, 则释放 URL
-    if (prevDyna.current.src) {
-      URL.revokeObjectURL(prevDyna.current.src)
+    if (prevDyna.current!.src) {
+      URL.revokeObjectURL(prevDyna.current!.src)
     }
     // 显示预览图片
-    prevDyna.current.style.opacity = 1
-    prevStat.current.style.opacity = 0
+    prevDyna.current!.style.opacity = '1'
+    prevStat.current!.style.opacity = '0'
     // 创建 URL
-    const image = file.current.files[0]
+    const image = file.current!.files![0]
     const url = URL.createObjectURL(image)
     // 设置预览图片
-    prevDyna.current.src = url
+    prevDyna.current!.src = url
   }
 
   // 在页面加载时获取封面
@@ -85,7 +85,7 @@ function Cover() {
     localforage.getItem('cover').then(file => {
       // 如果有封面, 设置封面
       if (file) {
-        const url = URL.createObjectURL(file)
+        const url = URL.createObjectURL(file as Blob)
         setCover(url)
       // 如果没有封面, 则重置封面
       } else {
@@ -129,5 +129,3 @@ function Cover() {
     </>
   )
 }
-
-export default Cover

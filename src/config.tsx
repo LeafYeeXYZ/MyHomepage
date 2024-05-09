@@ -10,7 +10,13 @@ import {
   SunFilled,
 } from '@ant-design/icons'
 
-export const links = [
+export type Link = {
+  url: string
+  name: string
+  icon: React.JSX.Element
+}
+
+export const links: Link[] = [
   { url: 'https://one.bnu.edu.cn/', name: '北京师范大学', icon: <BankFilled /> },
   { url: 'https://www.leafyee.xyz/', name: '小站', icon: <HomeFilled /> },
   { url: 'https://blog.leafyee.xyz/', name: '博客', icon: <BulbFilled /> },

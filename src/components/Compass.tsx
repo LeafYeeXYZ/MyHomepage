@@ -1,7 +1,7 @@
 import { CompassFilled } from '@ant-design/icons'
 import '../styles/Compass.css'
 
-export default function Compass() {
+export function Compass() {
   return (
     <a 
       className='compass' 

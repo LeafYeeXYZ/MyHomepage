@@ -2,7 +2,7 @@ import { links } from '../config.jsx'
 import { useState, useEffect } from 'react'
 import '../styles/Links.css'
 
-export default function Links() {
+export function Links() {
   // 一言
   const [essay, setEssay] = useState('Loading...')
   // 链接列表

@@ -10,8 +10,8 @@
 
 ## 使用
 1. 克隆本仓库
-2. `npm i` / `pnpm i` 安装依赖
-3. `npm run dev` / `pnpm dev` 本地预览
-4. `npm run build` / `pnpm build` 构建
+2. `bun i` 安装依赖
+3. `bun run dev` 本地预览
+4. `bun run build` 构建
 
 > 请修改 `Weather.jsx` 组件中的 `API` 为您自己的 `API`, 详见[这个项目](https://github.com/LeafYeeXYZ/MyAPIs)

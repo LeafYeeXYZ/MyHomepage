@@ -8,6 +8,7 @@ import {
   CloudFilled,
   StarFilled,
   SunFilled,
+  BilibiliOutlined,
 } from '@ant-design/icons'
 
 export type Link = {
@@ -26,4 +27,5 @@ export const links: Link[] = [
   { url: 'https://dash.cloudflare.com', name: 'Cloudflare', icon: <CloudFilled /> },
   { url: 'https://www.bing.com/search?q=Bing+AI&showconv=1&FORM=hpcodx', name: 'NewBing', icon: <StarFilled /> },
   { url: 'https://aistudio.google.com/', name: 'GoogleAI', icon: <SunFilled /> },
+  { url: 'https://t.bilibili.com/?tab=video', name: 'Bilibili', icon: <BilibiliOutlined /> },
 ]

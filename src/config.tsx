@@ -9,7 +9,7 @@ import {
   StarFilled,
   SunFilled,
   BilibiliOutlined,
-  CloudOutlined,
+  FileTextFilled,
 } from '@ant-design/icons'
 
 export type Link = {
@@ -22,7 +22,7 @@ export const links: Link[] = [
   { url: 'https://one.bnu.edu.cn/', name: '北京师范大学', icon: <BankFilled /> },
   { url: 'https://www.leafyee.xyz/', name: '小站', icon: <HomeFilled /> },
   { url: 'https://blog.leafyee.xyz/', name: '博客', icon: <BulbFilled /> },
-  { url: 'https://pan.leafyee.xyz/', name: '网盘', icon: <CloudOutlined /> },
+  { url: 'https://pan.leafyee.xyz/', name: '网盘', icon: <FileTextFilled /> },
   { url: 'https://paint.leafyee.xyz/', name: '画画', icon: <PictureFilled /> },
   { url: 'https://comment.leafyee.xyz/ui', name: '评论', icon: <CalendarFilled /> },
   { url: 'https://github.com', name: 'GitHub', icon: <GithubFilled /> },
